@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tasknavgraph"
+    app:startDestination="@id/toDoListFragment">
+
+    <fragment
+        android:id="@+id/toDoListFragment"
+        android:name="com.example.todolistapp.toDoListFragment"
+        android:label="To Do List"
+        tools:layout="@layout/fragment_to_do_list">
+        <action
+            android:id="@+id/action_toDoListFragment_to_editAddPageFragment"
+            app:destination="@id/editAddPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editAddPageFragment"
+        android:name="com.example.todolistapp.editAddPageFragment"
+        android:label="To Do List"
+        tools:layout="@layout/fragment_edit_add_page" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="discription"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_editAddPageFragment_to_toDoListFragment"
+            app:destination="@id/toDoListFragment" />
+    </fragment>
+</navigation>
