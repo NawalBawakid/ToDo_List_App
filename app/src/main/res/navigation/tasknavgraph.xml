@@ -22,12 +22,6 @@
         <argument
             android:name="title"
             app:argType="string" />
-        <argument
-            android:name="date"
-            app:argType="string" />
-        <argument
-            android:name="discription"
-            app:argType="string" />
         <action
             android:id="@+id/action_editAddPageFragment_to_toDoListFragment"
             app:destination="@id/toDoListFragment" />

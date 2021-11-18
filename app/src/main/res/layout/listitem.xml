@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="viewModel"
+            type="com.example.todolistapp.model.TaskViewModel" />
 
     </data>
 
@@ -36,7 +39,7 @@
             android:id="@+id/dueDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="15sp"
             android:text="10/12/2020"
             android:layout_marginTop="45dp"
             android:layout_marginStart="20sp"
