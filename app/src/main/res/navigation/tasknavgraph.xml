@@ -13,17 +13,31 @@
         <action
             android:id="@+id/action_toDoListFragment_to_editAddPageFragment"
             app:destination="@id/editAddPageFragment" />
+        <action
+            android:id="@+id/action_toDoListFragment_to_editFragment"
+            app:destination="@id/editFragment" />
     </fragment>
     <fragment
         android:id="@+id/editAddPageFragment"
         android:name="com.example.todolistapp.editAddPageFragment"
-        android:label="To Do List"
-        tools:layout="@layout/fragment_edit_add_page" >
+        android:label="Add Task"
+        tools:layout="@layout/fragment_edit_add_page">
         <argument
             android:name="title"
             app:argType="string" />
         <action
             android:id="@+id/action_editAddPageFragment_to_toDoListFragment"
             app:destination="@id/toDoListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.todolistapp.editFragment"
+        android:label="Edit Task">
+        <action
+            android:id="@+id/action_editFragment_to_toDoListFragment"
+            app:destination="@id/toDoListFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
 </navigation>

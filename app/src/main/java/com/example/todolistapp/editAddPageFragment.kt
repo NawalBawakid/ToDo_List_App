@@ -89,8 +89,6 @@ class editAddPageFragment : Fragment() {
             var action = editAddPageFragmentDirections.actionEditAddPageFragmentToToDoListFragment()
             view.findNavController().navigate(action)
 
-            var deletTask = TaskModel(false, viewModel.task.value!!, viewModel.dueDate.value!!, viewModel.description.value!!)
-            viewModel.remove(deletTask)
         }
 
     }

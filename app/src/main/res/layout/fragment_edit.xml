@@ -58,7 +58,7 @@
             android:id="@+id/deletebutton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/cancel"
+            android:text="@string/delete"
             android:layout_marginTop="20sp"
             android:layout_marginEnd="16dp"
             style="?attr/materialButtonOutlinedStyle"
@@ -66,10 +66,10 @@
             app:layout_constraintTop_toBottomOf="@id/description" />
 
         <Button
-            android:id="@+id/editaddbutton"
+            android:id="@+id/editbutton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/add"
+            android:text="@string/done"
             android:layout_marginTop="20sp"
             android:layout_marginEnd="30dp"
             android:layout_marginStart="10sp"

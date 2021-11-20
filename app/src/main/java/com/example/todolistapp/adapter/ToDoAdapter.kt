@@ -58,7 +58,8 @@ class ToDoAdapter(private val dataset:List<TaskModel>): RecyclerView.Adapter<ToD
 
 
         holder.taskList.setOnClickListener{
-            var action = toDoListFragmentDirections.actionToDoListFragmentToEditAddPageFragment(title= item.task)
+            var action = toDoListFragmentDirections.actionToDoListFragmentToEditFragment(title = item.task)
+            //var action = toDoListFragmentDirections.actionToDoListFragmentToEditAddPageFragment(title= item.task)
             holder.view.findNavController().navigate(action)
         }
 

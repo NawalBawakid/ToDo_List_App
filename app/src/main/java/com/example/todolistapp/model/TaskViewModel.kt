@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.todolistapp.allTaskList
 
 
@@ -24,10 +25,18 @@ class TaskViewModel: ViewModel(){
       allTaskList.removeIf { it.task == taskModel.task }
     }
 
-    fun disply( title:String){
+    fun disply(title:String){
         var item = allTaskList.find { it.task == title }
         task.value = item?.task
         description.value = item?.description
         dueDate.value = item?.dueDate
+    }
+
+
+    fun update(taskModel: TaskModel){
+
+        var item = allTaskList.indexOf(taskModel)
+//        allTaskList.set(item, tasks)
+
     }
 }
