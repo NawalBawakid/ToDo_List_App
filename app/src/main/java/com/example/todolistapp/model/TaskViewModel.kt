@@ -20,10 +20,12 @@ class TaskViewModel: ViewModel(){
         allTaskList.add(taskModel)
     }
 
+
     @RequiresApi(Build.VERSION_CODES.N)
     fun remove(taskModel: TaskModel){
       allTaskList.removeIf { it.task == taskModel.task }
     }
+
 
     fun disply(title:String){
         var item = allTaskList.find { it.task == title }
@@ -33,10 +35,11 @@ class TaskViewModel: ViewModel(){
     }
 
 
-    fun update(taskModel: TaskModel){
+    fun update(tasktitle: String){
 
-        var item = allTaskList.indexOf(taskModel)
-//        allTaskList.set(item, tasks)
+        var item = allTaskList.indexOfFirst { it.task == tasktitle }
+        var editTask = TaskModel(allTaskList[item].checked, task.value!!, dueDate.value!!, description.value!!)
+        allTaskList[item] = editTask
 
     }
 }

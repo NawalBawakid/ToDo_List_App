@@ -88,8 +88,7 @@ class editFragment : Fragment() {
             var action = editFragmentDirections.actionEditFragmentToToDoListFragment()
             view.findNavController().navigate(action)
 
-            var editTask = TaskModel(false, viewModel.task.value!!, viewModel.dueDate.value!!, viewModel.description.value!!)
-            viewModel.update(editTask)
+            viewModel.update(currentTitle)
         }
     }
 

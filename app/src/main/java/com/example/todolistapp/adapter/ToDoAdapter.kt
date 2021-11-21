@@ -14,6 +14,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todolistapp.model.TaskModel
 import com.example.todolistapp.R
+import com.example.todolistapp.allTaskList
 import com.example.todolistapp.toDoListFragmentDirections
 import java.text.SimpleDateFormat
 import java.util.*
@@ -39,11 +40,16 @@ class ToDoAdapter(private val dataset:List<TaskModel>): RecyclerView.Adapter<ToD
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ToDoViewHolder, position: Int) {
         val item = dataset[position]
-        holder.checkButton.isChecked
+        holder.checkButton.isChecked = item.checked
         holder.task.text = item.task
         holder.dueDate.text = item.dueDate
 
 
+        holder.checkButton.setOnCheckedChangeListener { buttonView, isChecked ->
+
+            allTaskList[position].checked = isChecked
+
+        }
 
 
         var nowDate = Date()
@@ -59,7 +65,6 @@ class ToDoAdapter(private val dataset:List<TaskModel>): RecyclerView.Adapter<ToD
 
         holder.taskList.setOnClickListener{
             var action = toDoListFragmentDirections.actionToDoListFragmentToEditFragment(title = item.task)
-            //var action = toDoListFragmentDirections.actionToDoListFragmentToEditAddPageFragment(title= item.task)
             holder.view.findNavController().navigate(action)
         }
 

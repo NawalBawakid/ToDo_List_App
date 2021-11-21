@@ -1,4 +1,4 @@
 package com.example.todolistapp.model
 
-class TaskModel(val checked: Boolean, val task: String, var dueDate: String, val description: String) {
+class TaskModel(var checked: Boolean, var task: String, var dueDate: String, var description: String) {
 }
